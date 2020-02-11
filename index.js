@@ -111,7 +111,7 @@ server.delete("/api/user/:id", (req, res) => {
       .status(404)
       .json({ message: "The user with the specified ID does not exist." });
   } else {
-    DB.remove(id)
+    db.remove(id)
       .then(removed => {
         res.status(200).json(removed);
       })
